@@ -14,6 +14,9 @@
     <!-- Styles -->
     <link rel="shortcut icon" href="img/pel_logo.png">
     <link rel="stylesheet" href="styles/output.css">
+
+    {{--  Scripts  --}}
+    <script src="js/output.js"></script>
 </head>
 
 <body class="bg-cl3">
