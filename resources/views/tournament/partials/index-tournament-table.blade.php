@@ -9,30 +9,24 @@
         </p>
     </header>
 
-    <div class="py-12">
-        <div class="container mx-auto mt-8">
-            <div class="grid grid-cols-1 lg:flex lg:flex-wrap md:flex-col md:justify-between gap-4">
-                @foreach ($tournaments as $tournament)
-                    <div class="bg-white overflow-hidden shadow-md rounded-lg lg:w-1/3 md:w-full">
-                        <div class="p-4">
-                            <h2 class="font-bold text-xl mb-2">{{ $tournament->name }}</h2>
-                            <p class="text-gray-600">{{ $tournament->description }}</p>
-                            {{-- Agrega más detalles según tus necesidades --}}
-                            <div class="mt-4  flex justify-between items-center">
-                                @if ($tournament->date_start)
-                                    <span class="text-sm text-gray-500">Fecha de Inicio:
-                                        {{ $tournament->date_start }}</span>
-                                @endif
+    <div class="py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4">
+        @foreach ($tournaments as $tournament)
+            <a href="#" class="bg-white overflow-hidden shadow-md rounded-lg sm:w-full">
+                <div class="p-4">
+                    <h2 class="font-bold text-xl mb-2">{{ $tournament->name }}</h2>
+                    <p class="text-gray-600">{{ $tournament->description }}</p>
+                    {{-- Agrega más detalles según tus necesidades --}}
+                    <div class="mt-4 flex justify-between items-center">
+                        @if ($tournament->date_start)
+                            <span class="text-sm text-gray-500">Fecha de Inicio: {{ $tournament->date_start }}</span>
+                        @endif
 
-                                @if ($tournament->date_close)
-                                    <span class="text-sm text-gray-500">Fecha de Cierre:
-                                        {{ $tournament->date_close }}</span>
-                                @endif
-                            </div>
-                        </div>
+                        @if ($tournament->date_close)
+                            <span class="text-sm text-gray-500">Fecha de Cierre: {{ $tournament->date_close }}</span>
+                        @endif
                     </div>
-                @endforeach
-            </div>
-        </div>
+                </div>
+            </a>
+        @endforeach
     </div>
 </section>
