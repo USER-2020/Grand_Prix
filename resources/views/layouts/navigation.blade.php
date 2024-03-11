@@ -18,6 +18,11 @@
                     <x-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">
                         {{ __('Profile') }}
                     </x-nav-link>
+                    @role(['superAdmin', 'admin'])
+                    <x-nav-link :href="route('index.tournament')" :active="request()->routeIs('index.tournament')">
+                        {{ __('Create Tournament') }}
+                    </x-nav-link>
+                    @endrole
                 </div>
             </div>
 
@@ -74,8 +79,13 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">
-                {{ __('Crear torneo') }}
+                {{ __('Profile') }}
             </x-responsive-nav-link>
+            @role(['superAdmin', 'admin'])
+            <x-responsive-nav-link :href="route('index.tournament')" :active="request()->routeIs('index.tournament')">
+                {{ __('Create tournament') }}
+            </x-responsive-nav-link>
+            @endrole
         </div>
 
         <!-- Responsive Settings Options -->

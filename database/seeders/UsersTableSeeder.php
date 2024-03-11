@@ -41,5 +41,14 @@ class UsersTableSeeder extends Seeder
         ]);
         $playerRole = Role::where('name', 'player')->first();
         $player->assignRole($playerRole);
+
+        // Crear un colaborador
+        $player = User::create([
+            'name' => 'PCollaborator',
+            'email' => 'collab@example.com',
+            'password' => bcrypt('password'),
+        ]);
+        $playerRole = Role::where('name', 'collaborator')->first();
+        $player->assignRole($playerRole);
     }
 }
