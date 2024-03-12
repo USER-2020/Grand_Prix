@@ -27,4 +27,12 @@ class HomeController extends Controller
         $tournaments = Tournament::all();
         return view('dashboard', compact('tournaments'));
     }
+
+    public function show(string $id)
+    {
+        $tournament = Tournament::find($id);
+        if (!$tournament)
+            abort(404, 'This tournament does not exist!');
+        return view("tournament.show", ["tournament" => $tournament]);
+    }
 }

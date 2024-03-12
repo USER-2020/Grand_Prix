@@ -28,6 +28,7 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     /* Dashboasrd */
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+    Route::get('/info-tournament/{tournament}', [HomeController::class, 'show'])->name('show.tournament');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

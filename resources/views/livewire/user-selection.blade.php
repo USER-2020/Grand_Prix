@@ -4,7 +4,9 @@
         wire:change="updateSelectedUsers">
         @if ($users)
             @foreach ($users as $user)
-                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                @if (!in_array($user->id, $table_users->pluck('id')->toArray()))
+                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                @endif
             @endforeach
         @else
             <option value="" disabled selected>No hay jugadores disponibles</option>
@@ -15,19 +17,20 @@
     <form wire:submit.prevent="addUser">
         <div class="mb-4">
             <label for="newUserName" class="block text-sm font-medium text-gray-600 dark:text-gray-400">Nombre</label>
-            <input type="text" wire:model="newUserName" id="newUserName" class="mt-1 p-2 border rounded-md w-full"
-                required />
+            <x-text-input type="text" wire:model="newUserName" id="newUserName"
+                class="mt-1 p-2 border rounded-md w-full" required />
         </div>
 
         <div class="mb-4">
             <label for="newUserEmail" class="block text-sm font-medium text-gray-600 dark:text-gray-400">Correo
                 Electrónico</label>
-            <input type="email" wire:model="newUserEmail" id="newUserEmail" class="mt-1 p-2 border rounded-md w-full"
-                required />
+            <x-text-input type="email" wire:model="newUserEmail" id="newUserEmail"
+                class="mt-1 p-2 border rounded-md w-full" required />
         </div>
 
         <div class="flex items-center justify-end">
-            <x-primary-button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md">Agregar Usuario</x-primary-button>
+            <x-primary-button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md">Agregar
+                Usuario</x-primary-button>
         </div>
     </form>
 
@@ -49,10 +52,9 @@
                             <td class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">{{ $tableUser->name }}</td>
                             <td class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">{{ $tableUser->email }}</td>
                             <td class="flex justify-between">
-                                
-                                <x-primary-button> Editar</x-primary-button>
-                                <x-danger-button
-                                    wire:click="deleteUser({{ $tableUser->id }})">Borrar</x-danger-button>
+
+                                <x-primary-button class="mr-3"> Editar</x-primary-button>
+                                <x-danger-button wire:click="deleteUser({{ $tableUser->id }})">Borrar</x-danger-button>
                             </td>
                         </tr>
                     @endforeach

@@ -7,7 +7,7 @@
 
     <div class="py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4">
         @foreach ($tournaments as $tournament)
-            <a href="#" class="bg-white overflow-hidden shadow-md rounded-lg sm:w-full">
+            <a href="{{ route('show.tournament', ['tournament' => $tournament->id]) }}" class="bg-white overflow-hidden shadow-md rounded-lg sm:w-full">
                 <div class="p-4">
                     <div class="flex justify-between">
                         <div>

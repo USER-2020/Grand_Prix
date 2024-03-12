@@ -19,7 +19,7 @@
                     <div class="mb-4">
                         <label for="name" class="block text-sm font-medium text-gray-600 dark:text-gray-400">Nombre
                             del Equipo</label>
-                        <input type="text" name="name" id="name" class="mt-1 p-2 border rounded-md w-full"
+                        <x-text-input type="text" name="name" id="name" class="mt-1 p-2 border rounded-md w-full"
                             required />
                     </div>
                     
