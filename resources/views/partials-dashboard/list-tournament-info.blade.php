@@ -9,8 +9,17 @@
         @foreach ($tournaments as $tournament)
             <a href="#" class="bg-white overflow-hidden shadow-md rounded-lg sm:w-full">
                 <div class="p-4">
-                    <h2 class="font-bold text-xl mb-2">{{ $tournament->name }}</h2>
-                    <p class="text-gray-600">{{ $tournament->description }}</p>
+                    <div class="flex justify-between">
+                        <div>
+                            <h2 class="font-bold text-xl mb-2">{{ $tournament->name }}</h2>
+                            <p class="text-gray-600">{{ $tournament->description }}</p>
+                        </div>
+                        <div>
+                            <h2 class="font-bold text-xl mb-2">Cupos</h2>
+                            <h2 class="font-bold text-xl mb-2">{{$tournament->room_size}}</h2>
+                        </div>
+                    </div>
+
                     {{-- Agrega más detalles según tus necesidades --}}
                     <div class="mt-4 flex justify-between items-center">
                         @if ($tournament->date_start)

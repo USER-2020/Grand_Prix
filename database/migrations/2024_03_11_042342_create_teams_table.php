@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('name'); // Ajusta según tus necesidades
-            $table->unsignedBigInteger('spreadsheet_id'); // Ajusta según tus necesidades
+            // $table->unsignedBigInteger('spreadsheet_id'); // Ajusta según tus necesidades
             $table->string('icon')->nullable(); // Puedes permitir valores nulos si es opcional
         
 

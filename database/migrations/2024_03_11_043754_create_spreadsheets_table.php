@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('team_id'); // Ajusta según tus necesidades
             // $table->unsignedBigInteger('user_id'); // Ajusta según tus necesidades
-            $table->integer('shirt_number'); // Ajusta según tus necesidades
 
             // Claves foráneas
             $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');

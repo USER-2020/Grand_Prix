@@ -11,10 +11,10 @@ return new class extends Migration {
     public function up(): void
     {
         
-        Schema::table('teams', function (Blueprint $table) {
-            //
-            $table->foreign('spreadsheet_id')->references('id')->on('spreadsheets')->onDelete('cascade');
-        });
+        // Schema::table('teams', function (Blueprint $table) {
+        //     //
+        //     $table->foreign('spreadsheet_id')->references('id')->on('spreadsheets')->onDelete('cascade');
+        // });
 
         Schema::table('scores', function (Blueprint $table) {
             //

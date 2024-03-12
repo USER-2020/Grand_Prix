@@ -9,6 +9,11 @@ class Spreadsheet extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'team_id', // Otros atributos aquí...
+    ];
+
+
     public function team()
     {
         return $this->belongsTo(Team::class);
@@ -16,6 +21,7 @@ class Spreadsheet extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
-    }   
+        return $this->belongsToMany(User::class, 'spreadsheet_user')
+            ->latest('spreadsheet_user.created_at'); // Ordenar por fecha de creación en orden descendente
+    }
 }

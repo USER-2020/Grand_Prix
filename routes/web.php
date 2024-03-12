@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TournamentController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,11 @@ Route::middleware('auth')->group(function () {
     /* Crear torneo */
     Route::get('/tournament-index', [TournamentController::class, 'index'])->name('index.tournament');
     Route::post('/tournament-create', [TournamentController::class, 'store'])->name('store.tournament');
+
+    /* teams */
+    Route::get('/team-index', [TeamController::class, 'index'])->name('index.teams');
+    Route::post('/team-create', [TeamController::class, 'store'])->name('store.teams');
+    Route::get('/team-manage/{team}', [TeamController::class, 'show'])->name('manage.teams');
 });
 
 require __DIR__.'/auth.php';

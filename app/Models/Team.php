@@ -9,6 +9,11 @@ class Team extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        // Otros campos del modelo Team...
+    ];
+
     public function tournaments()
     {
         return $this->belongsToMany(Tournament::class);
