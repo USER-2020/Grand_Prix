@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Tournament;
 use App\Models\Spreadsheet;
 use Illuminate\Http\Request;
+use App\Models\SpreadsheetUser;
+use Illuminate\Support\Facades\Auth;
 
 class TeamController extends Controller
 {
@@ -46,8 +48,13 @@ class TeamController extends Controller
             'name' => $request->input('name'),
         ]);
 
-        Spreadsheet::create([
+        $spreadSheet = Spreadsheet::create([
             'team_id' => $team->id,
+        ]);
+
+        SpreadsheetUser::create([
+            'spreadsheet_id' =>$spreadSheet->id,
+            'user_id'=> Auth::user()->id,
         ]);
 
 
