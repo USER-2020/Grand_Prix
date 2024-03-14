@@ -7,7 +7,8 @@
 
     <div class="py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4">
         @foreach ($tournaments as $tournament)
-            <a href="{{ route('show.tournament', ['tournament' => $tournament->id]) }}" class="bg-white overflow-hidden shadow-md rounded-lg sm:w-full">
+            <a href="{{ route('show.tournament', ['tournament' => $tournament->id]) }}"
+                class="bg-white overflow-hidden shadow-md rounded-lg sm:w-full">
                 <div class="p-4">
                     <div class="flex justify-between">
                         <div>
@@ -16,7 +17,7 @@
                         </div>
                         <div>
                             <h2 class="font-bold text-xl mb-2">Cupos</h2>
-                            <h2 class="font-bold text-xl mb-2">{{$tournament->room_size}}</h2>
+                            <h2 class="font-bold text-xl mb-2">{{ $tournament->room_size }}</h2>
                         </div>
                     </div>
 
@@ -30,6 +31,10 @@
                             <span class="text-sm text-gray-500">Fecha de Cierre: {{ $tournament->date_close }}</span>
                         @endif
                     </div>
+                    </br>
+                    <x-secondary-button>
+                        {{ 'Inscribirse' }}
+                    </x-secondary-button>
                 </div>
             </a>
         @endforeach

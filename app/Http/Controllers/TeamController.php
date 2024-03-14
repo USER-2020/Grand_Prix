@@ -21,7 +21,10 @@ class TeamController extends Controller
         $users = User::whereHas('roles', function ($query) {
             $query->where('name', 'player');
         })->get();
-        $teams = Team::all();
+        $userId = auth()->id();
+        $teams = Team::whereHas('spreadsheet.users', function ($query) use ($userId) {
+            $query->where('user_id', $userId);
+        })->get();
         $tournaments = Tournament::all();
         return view('team.index', compact('teams', 'users', 'tournaments'));
     }
@@ -53,8 +56,8 @@ class TeamController extends Controller
         ]);
 
         SpreadsheetUser::create([
-            'spreadsheet_id' =>$spreadSheet->id,
-            'user_id'=> Auth::user()->id,
+            'spreadsheet_id' => $spreadSheet->id,
+            'user_id' => Auth::user()->id,
         ]);
 
 
@@ -70,9 +73,12 @@ class TeamController extends Controller
         $users = User::whereHas('roles', function ($query) {
             $query->where('name', 'player');
         })->get();
-        $teams = Team::all();
+        $userId = auth()->id();
+        $teams = Team::whereHas('spreadsheet.users', function ($query) use ($userId) {
+            $query->where('user_id', $userId);
+        })->get();
         $tournaments = Tournament::all();
-        return view('team.show', compact('users','teams', 'tournaments'));
+        return view('team.show', compact('users', 'teams', 'tournaments'));
     }
 
     /**
