@@ -10,7 +10,11 @@
 
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 @livewire('matches-control')
-            </div>          
+            </div>
+
+            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+                @include('matches.partials.table-matches')
+            </div>
 
 
         </div>

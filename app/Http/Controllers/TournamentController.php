@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Tournament;
 use Illuminate\Http\Request;
+use App\Models\TournamentUser;
+use Illuminate\Support\Facades\Auth;
 
 class TournamentController extends Controller
 {
@@ -42,11 +44,18 @@ class TournamentController extends Controller
         ]);
 
         // Crea un nuevo modelo y guarda los datos
-    $tournament = new Tournament($validatedData);
-    $tournament->save();
+        $tournament = new Tournament($validatedData);
+        $tournament->save();
+        // dd($tournament->id);
+        TournamentUser::create(
+            [
+                "user_id" => Auth::user()->id,
+                "tournament_id" => $tournament->id,
+            ]
+        );
 
-    // Puedes redirigir a la vista de detalle o a cualquier otra página
-    return redirect()->route('index.tournament', ['tournament' => $tournament->id])->with('status', 'tournament-create');
+        // Puedes redirigir a la vista de detalle o a cualquier otra página
+        return redirect()->route('index.tournament', ['tournament' => $tournament->id])->with('status', 'tournament-create');
     }
 
     /**
