@@ -1,0 +1,3 @@
+<div>
+    Comonetne livewire
+</div>
