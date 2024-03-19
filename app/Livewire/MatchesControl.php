@@ -15,6 +15,8 @@ class MatchesControl extends Component
     public $tournamentTeams = [];
     public $tournament_id;
 
+    // public $showMessage = false;
+
     public function mount()
     {
         $this->tournamentUser = TournamentUser::where([
@@ -81,6 +83,7 @@ class MatchesControl extends Component
 
     public function crearGruposManualmente($tournamentId)
     {
+        
         return redirect()->route('admin.groups-man', ['tournament' => $tournamentId]);
     }
 }

@@ -30,7 +30,7 @@
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             <x-primary-button wire:click="crearGruposAutomaticamente({{ $tournamentUser->tournament->id }})">Crear grupos automáticamente</x-primary-button>
-                            <x-primary-button wire:click="crearGruposManualmente({{ $tournamentUser->tournament->id }})">Crear grupos manualmente</x-primary-button>
+                            <x-primary-button wire:click="crearGruposManualmente({{ $tournamentUser->tournament->id }})" style="pointer-events: none">Crear grupos manualmente</x-primary-button>
                         </td>
                     </tr>
                 @endforeach
