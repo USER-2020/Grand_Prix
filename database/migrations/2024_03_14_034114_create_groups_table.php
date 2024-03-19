@@ -13,11 +13,11 @@ return new class extends Migration {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
             $table->string('name'); // Campo para el nombre del grupo
-            $table->unsignedBigInteger('team_id'); // Clave foránea para el ID del equipo
+            $table->unsignedBigInteger('tournament_id'); // Clave foránea para el ID del torneo
             $table->timestamps();
 
-            // Definir la relación con la tabla de equipos
-            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
+            // Definir la relación con la tabla de torneos
+            $table->foreign('tournament_id')->references('id')->on('tournaments')->onDelete('cascade');
         });
     }
 

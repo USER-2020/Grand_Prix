@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Group as ModelsGroup;
 use Illuminate\Http\Request;
 
-class MatchesController extends Controller
+class Group extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,7 @@ class MatchesController extends Controller
     public function index()
     {
         //
-        
-        return view('matches.index');
+        return view('groups.index');
     }
 
     /**
@@ -39,6 +38,11 @@ class MatchesController extends Controller
     public function show(string $id)
     {
         //
+        $groupsWithTeams = ModelsGroup::where("tournament_id", $id)->get();
+        // dd( $groupsWithTeams);
+        return view('groups.index', compact('groupsWithTeams'));
+        
+
     }
 
     /**

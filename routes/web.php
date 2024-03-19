@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Group;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MatchesController;
 use App\Http\Controllers\ProfileController;
@@ -47,6 +48,11 @@ Route::middleware('auth')->group(function () {
 
     /* Administracion partidos */
     Route::get('/matches-index', [MatchesController::class, 'index'])->name('admin.matches');
+
+    /* Administracion de grupos */
+    Route::get('/manage-groups-manual/{tournament}', [MatchesController::class, 'index'])->name('admin.groups-man');
+    Route::get('/manage-groups-aut/{tournament}', [Group::class, 'show'])->name('admin.groups-aut');
+    // Route::get('/manage-groups-aut/{tournament}', [Group::class, 'show'])->name('admin.groups-aut');
 });
 
 require __DIR__.'/auth.php';

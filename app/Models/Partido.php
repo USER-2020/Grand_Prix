@@ -9,8 +9,14 @@ class Partido extends Model
 {
     use HasFactory;
 
-    public function score()
+    public function scores()
     {
-        return $this->hasOne(Score::class);
+        return $this->hasMany(Score::class);
     }
+
+    public function tournaments()
+    {
+        return $this->belongsToMany(Tournament::class, 'tournament_partidos');
+    }
+
 }

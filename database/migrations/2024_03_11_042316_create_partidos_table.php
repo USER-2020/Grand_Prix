@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('partidos', function (Blueprint $table) {
             $table->id();
             $table->string('reference'); // Ajusta según tus necesidades
-            $table->unsignedBigInteger('score_id'); // Ajusta según tus necesidades
+            // $table->unsignedBigInteger('score_id'); // Ajusta según tus necesidades
             $table->string('fase'); // Ajusta según tus necesidades
             $table->boolean('activo');
 

@@ -23,10 +23,10 @@ return new class extends Migration {
             $table->foreign('teamB_id')->references('id')->on('teams')->onDelete('cascade');
         });
 
-        Schema::table('partidos', function (Blueprint $table) {
-            //
-            $table->foreign('score_id')->references('id')->on('scores')->onDelete('cascade');
-        });
+        // Schema::table('partidos', function (Blueprint $table) {
+        //     //
+        //     $table->foreign('score_id')->references('id')->on('scores')->onDelete('cascade');
+        // });
     }
 
     /**

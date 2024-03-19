@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Group extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name', 'tournament_id'];
+
+    public function teams()
+    {
+        return $this->belongsToMany(Team::class);
+    }
 }
