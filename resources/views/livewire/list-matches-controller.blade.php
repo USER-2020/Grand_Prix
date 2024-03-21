@@ -1,6 +1,7 @@
 <div class="dark:bg-gray-800 p-4 rounded-lg shadow-md">
     <h2 class="text-xl font-bold mb-4 dark:text-gray-300">Lista de partidos</h2>
     <div class="overflow-x-auto">
+        <x-primary-button wire:click='randomizar'>Ordenar aleatoriamente</x-primary-button>
         <table class="table-auto w-full">
             <thead>
                 <tr>
@@ -15,7 +16,8 @@
                     <tr>
                         <td class="px-4 py-2 dark:text-gray-300">{{ $partido->partido->reference }}</td>
                         <td class="px-4 py-2 dark:text-gray-300">{{ $partido->partido->fase }}</td>
-                        <td class="px-4 py-2 dark:text-gray-300">{{ $partido->activo ? 'Activo' : 'En espera' }}</td>
+                        <td class="px-4 py-2 dark:text-gray-300">
+                            {{ $partido->partido->activo ? 'Activo' : 'En espera' }}</td>
                         <td class="px-4 py-2 dark:text-gray-300">
                             <x-primary-button
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
@@ -25,7 +27,7 @@
                             <x-secondary-button
                                 class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">
                                 {{--  <a href="{{ route('ruta_de_la_vista_del_score', ['partido' => $partido->id]) }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">  --}}
-                                <a href="#">
+                                <a href="{{ route('admin.score-liveaction', ['partido' => $partido->partido->id]) }}">
                                     Score
                                 </a>
                             </x-secondary-button>

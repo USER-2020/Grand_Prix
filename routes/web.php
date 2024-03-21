@@ -4,6 +4,7 @@ use App\Http\Controllers\Group;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MatchesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ScoreManage;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TournamentController;
 use App\Livewire\MatchesControl;
@@ -53,6 +54,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/manage-groups-manual/{tournament}', [MatchesController::class, 'index'])->name('admin.groups-man');
     Route::get('/manage-groups-aut/{tournament}', [Group::class, 'show'])->name('admin.groups-aut');
     // Route::get('/manage-groups-aut/{tournament}', [Group::class, 'show'])->name('admin.groups-aut');
+
+    /* Administracion de score */
+    Route::get('/manage-score-liveaction/{partido}', [ScoreManage::class, 'index'])->name('admin.score-liveaction');
 });
 
 require __DIR__.'/auth.php';

@@ -31,4 +31,11 @@ class Score extends Model
     {
         return $this->belongsTo(Team::class, 'teamB_id');
     }
+
+    public function set()
+    {
+        return $this->belongsTo(Set::class);
+    }
+
+
 }
