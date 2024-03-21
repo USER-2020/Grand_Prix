@@ -14,9 +14,9 @@
                 @endif
             </div>
             <div class="flex justify-center mt-4">
-                <div class="max-w-2xl mx-4 bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                <div class="max-w-2xl mx-4 bg-white-800 rounded-lg shadow-lg overflow-hidden dark:bg-gray-700">
                     <div class="px-4 py-2 flex flex-col items-center">
-                        <h2 class="text-xl font-semibold text-white">{{ $teamA_name }}</h2>
+                        <h2 class="text-xl font-semibold text-gray-700 dark:text-gray-200">{{ $teamA_name }}</h2>
                         <div class="flex flex-col items-center mt-4">
                             <div class="font-bold text-blue-300 dark:text-gray-200" style="font-size: 200px">
                                 {{ $teamAScore }}</div>
@@ -38,9 +38,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="max-w-2xl mx-4 bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                <div class="max-w-2xl mx-4 bg-white-800 rounded-lg shadow-lg overflow-hidden dark:bg-gray-700">
                     <div class="px-4 py-2 flex flex-col items-center">
-                        <h2 class="text-xl font-semibold text-white">{{ $teamB_name }}</h2>
+                        <h2 class="text-xl font-semibold text-gray-700 dark:text-gray-200">{{ $teamB_name }}</h2>
                         <div class="flex flex-col items-center mt-4">
                             <div class="font-bold text-red-300 dark:text-gray-200" style="font-size: 200px">
                                 {{ $teamBScore }}</div>
