@@ -19,6 +19,9 @@ class ListMatchesController extends Component
 
     public function mount()
     {
+        // Inicializar la propiedad $this->tournamentPartidos como una colección vacía
+        $this->tournamentPartidos = collect([]);
+
         // Obtener el ID del torneo desde la ruta
         $this->tournamentId = Route::current()->parameter('tournament');
 
@@ -92,6 +95,7 @@ class ListMatchesController extends Component
                         $tournamentPartido->tournament_id = $this->tournamentId;
                         $tournamentPartido->partido_id = $partido->id;
                         $tournamentPartido->save();
+                        $this->randomizar();
                     }
                 }
             }
@@ -104,6 +108,7 @@ class ListMatchesController extends Component
                 ->get();
         }
     }
+
 
 
 
@@ -182,7 +187,7 @@ class ListMatchesController extends Component
 
         // Cambia el estado de activo
         $partido->activo = !$partido->activo;
-        
+
         // Guarda los cambios en la base de datos
         $partido->save();
         // dd($partido);
