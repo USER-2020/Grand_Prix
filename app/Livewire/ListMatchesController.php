@@ -71,6 +71,7 @@ class ListMatchesController extends Component
                         $partido->reference = "Partido entre " . $team1->name . " y " . $team2->name;
                         $partido->fase = "Fase de grupos";
                         $partido->activo = false;
+                        $partido->finish = false;
                         $partido->save();
 
                         // Crear sets y scores para cada partido

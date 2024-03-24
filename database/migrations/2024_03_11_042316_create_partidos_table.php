@@ -17,6 +17,7 @@ return new class extends Migration
             // $table->unsignedBigInteger('score_id'); // Ajusta según tus necesidades
             $table->string('fase'); // Ajusta según tus necesidades
             $table->boolean('activo');
+            $table->boolean('finish');
 
             // Clave foránea
             // $table->foreign('score_id')->references('id')->on('scores')->onDelete('cascade');
