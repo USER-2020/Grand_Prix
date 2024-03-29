@@ -19,6 +19,11 @@ class ListMatchesController extends Component
 
     public function mount()
     {
+        // Actualizar todos los registros de la tabla "partidos" para que "activo" sea verdadero
+        Partido::query()->update(['activo' => true]);
+        // Actualizar todos los registros de la tabla "partidos" para que "finish" sea verdadero
+        Partido::query()->update(['finish' => true]);
+
         // Inicializar la propiedad $this->tournamentPartidos como una colección vacía
         $this->tournamentPartidos = collect([]);
 

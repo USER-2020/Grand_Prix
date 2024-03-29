@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Team;
+use App\Models\Partido;
 use Livewire\Component;
 use App\Models\Tournament;
 use App\Models\Teamtournament;
@@ -19,6 +20,7 @@ class TournamentTeam extends Component
 
     public function mount()
     {
+
         // Obtener el ID del torneo seleccionado
         $this->selectedTournamentId = Route::current()->parameter('tournament');
 
@@ -29,7 +31,10 @@ class TournamentTeam extends Component
     public function render()
     {
         // Obtener todos los equipos asociados al torneo
-        $this->associatedTeams = Teamtournament::with('team', 'tournament')->get();
+        $this->associatedTeams = Teamtournament::with('team', 'tournament')
+            ->where('tournament_id', $this->selectedTournamentId)
+            ->get();
+            // dd($this->associatedTeams);
 
         // Obtener los usuarios asociados a cada equipo
         foreach ($this->associatedTeams as $teamTournament) {
@@ -55,6 +60,7 @@ class TournamentTeam extends Component
         $existingAssociation = Teamtournament::where('team_id', $this->selectedTeam)
             ->where('tournament_id', $this->selectedTournamentId)
             ->exists();
+
 
         // Si no existe la asociación, crea una nueva entrada en la tabla team_tournament
         if (!$existingAssociation) {
@@ -103,16 +109,20 @@ class TournamentTeam extends Component
     {
         // Obtener el ID del torneo seleccionado
         $selectedTournamentId = $this->selectedTournamentId;
+        // dd($selectedTournamentId);
 
         // Obtener el ID del usuario autenticado
         $userId = auth()->id();
+
 
         // Obtener los equipos asociados al usuario autenticado a través de su spreadsheet
         $this->userTeams = Team::whereHas('spreadsheet.users', function ($query) use ($userId) {
             $query->where('user_id', $userId);
         })->whereDoesntHave('tournaments', function ($query) use ($selectedTournamentId) {
-            $query->where('tournament_id', $selectedTournamentId);
+            $query->where('team_tournament.tournament_id', $selectedTournamentId);
         })->get();
+
+        // dd($this->userTeams);
 
         // Si solo hay un equipo disponible, seleccionarlo automáticamente
         if ($this->userTeams->count() === 1) {

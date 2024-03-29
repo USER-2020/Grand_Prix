@@ -19,9 +19,12 @@
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 @livewire('list-matches-controller')
             </div>
+            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+                @livewire('position-tournament.table-position-component')
+            </div>
             @livewireScripts
 
-            
+
 
 
         </div>

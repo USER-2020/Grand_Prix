@@ -14,11 +14,20 @@
             <tbody>
                 @foreach ($tournamentPartidos as $partido)
                     <tr>
-                        <td class="px-4 py-2 dark:text-gray-300">{{ $partido->partido->reference }}</td>
-                        <td class="px-4 py-2 dark:text-gray-300">{{ $partido->partido->fase }}</td>
-                        <td class="px-4 py-2 dark:text-gray-300">
-                            {{ $partido->partido->activo ? 'Activo' : 'En espera' }}</td>
-                        <td class="px-4 py-2 dark:text-gray-300">
+                        <td class="px-4 py-2 dark:text-gray-300 text-center">{{ $partido->partido->reference }}</td>
+                        <td class="px-4 py-2 dark:text-gray-300 text-center">{{ $partido->partido->fase }}</td>
+                        <td class="px-4 py-2 dark:text-gray-300 text-center">
+                            @if ($partido->partido->activo && $partido->partido->finish)
+                                <span class="bg-pink-500 text-white py-1 px-2 rounded-full" style="color: #6C13E6">Finalizado</span>
+                            @elseif ($partido->partido->activo && !$partido->partido->finish)
+                                <span class="bg-green-500 text-white py-1 px-2 rounded-full" style="color:#00E632">En curso</span>
+                            @else
+                                <span class="bg-yellow-500 text-white py-1 px-2 rounded-full" style="color:#E6C32A">En espera</span>
+                            @endif
+                        </td>
+
+
+                        <td class="px-4 py-2 dark:text-gray-300 text-center">
                             <x-primary-button
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
                                 wire:click="toggleActivity({{ $partido->id }})">
