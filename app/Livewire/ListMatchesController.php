@@ -19,11 +19,12 @@ class ListMatchesController extends Component
 
     public function mount()
     {
-        // Actualizar todos los registros de la tabla "partidos" para que "activo" sea verdadero
-        Partido::query()->update(['activo' => true]);
-        // Actualizar todos los registros de la tabla "partidos" para que "finish" sea verdadero
-        Partido::query()->update(['finish' => true]);
 
+        //TODO:solo sirve para pruebas, eliminar
+        //Prueba test para cambiar todos los estados de partidos a finalizado 
+        $this->changuesStatesTableTest();
+
+        
         // Inicializar la propiedad $this->tournamentPartidos como una colección vacía
         $this->tournamentPartidos = collect([]);
 
@@ -116,7 +117,17 @@ class ListMatchesController extends Component
     }
 
 
-
+    /**
+     * The function updates all records in the "partidos" table to set the "activo" and "finish"
+     * columns to true.
+     */
+    private function changuesStatesTableTest()
+    {
+        // Actualizar todos los registros de la tabla "partidos" para que "activo" sea verdadero
+        Partido::query()->update(['activo' => true]);
+        // Actualizar todos los registros de la tabla "partidos" para que "finish" sea verdadero
+        Partido::query()->update(['finish' => true]);
+    }
 
 
     public function render()
