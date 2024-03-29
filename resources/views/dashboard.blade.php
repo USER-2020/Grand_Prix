@@ -25,6 +25,7 @@
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="w-full">
                     {{'Cards de peronas registradas, cantidad de adminidistradores, jugadores registrados, torneos activos, etc... (Estadisticxa)'}}
+                    @livewire('register-and-statics.registers-and-statics')
                 </div>
             </div>
 

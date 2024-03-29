@@ -63,6 +63,8 @@
                     </div>
                 </div>
             </div>
+        </br>
+            <x-primary-button wire:click="changueFinishState">Finalizar partido</x-primary-button>
         </div>
     </div>
 </div>

@@ -119,6 +119,13 @@ class Score extends Component
         $score->save();
     }
 
+    public function changueFinishState()
+    {
+        // Cambiar el estado de finalización del partido terminado
+        $this->partido->finish = !$this->partido->finish;
+        $this->partido->save();
+    }
+
     public function render()
     {
         // Obtener los sets asociados al partido

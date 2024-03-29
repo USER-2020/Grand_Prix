@@ -1,6 +1,6 @@
 <div class="dark:bg-gray-800 p-4 rounded-lg shadow-md">
     <h2 class="text-xl font-bold mb-4 dark:text-gray-300">Lista de partidos</h2>
-    <div class="overflow-x-auto">
+    <div class="overflow-x-auto" style="overflow-x:auto;">
         <x-primary-button wire:click='randomizar'>Ordenar aleatoriamente</x-primary-button>
         <table class="table-auto w-full">
             <thead>
