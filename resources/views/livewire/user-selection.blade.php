@@ -35,7 +35,7 @@
     </form>
 
     <div>
-        <h3 class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Usuarios de la tabla relacionada:</h3>
+        <h3 class="text-white px-4 py-2 rounded-md mr-2">Usuarios de la tabla relacionada:</h3>
 
         @if ($table_users && count($table_users) > 0)
             <table class="table">
@@ -49,8 +49,8 @@
                 <tbody>
                     @foreach ($table_users as $tableUser)
                         <tr>
-                            <td class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">{{ $tableUser->name }}</td>
-                            <td class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">{{ $tableUser->email }}</td>
+                            <td class="text-white px-4 py-2 rounded-md mr-2">{{ $tableUser->name }}</td>
+                            <td class="text-white px-4 py-2 rounded-md mr-2">{{ $tableUser->email }}</td>
                             <td class="flex justify-between">
 
                                 <x-primary-button class="mr-3"> Editar</x-primary-button>
