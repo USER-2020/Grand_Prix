@@ -42,8 +42,8 @@
                 <thead>
                     <tr>
                         <th class="bg-gray-500 bg-opacity-25 text-white px-4 py-2 rounded-md mr-2">Nombre</th>
-                        <th class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Correo Electrónico</th>
-                        <th class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Acciones</th> {{-- Nueva columna para botones de acción --}}
+                        <th class="bg-gray-500 bg-opacity-25 text-white px-4 py-2 rounded-md mr-2">Correo Electrónico</th>
+                        <th class="bg-gray-500 bg-opacity-25 text-white px-4 py-2 rounded-md mr-2">Acciones</th> {{-- Nueva columna para botones de acción --}}
                     </tr>
                 </thead>
                 <tbody>
