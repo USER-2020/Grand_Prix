@@ -53,7 +53,7 @@ class MatchesControl extends Component
             $countGroups = 0;
             if ($countTournamentsTeams >= 4 && $countTournamentsTeams <= 5) {
                 $countGroups = 1;
-            if ($countTournamentsTeams >= 4 && $countTournamentsTeams <= 10) {
+            } elseif ($countTournamentsTeams >= 4 && $countTournamentsTeams <= 10) {
                 $countGroups = 2;
             } elseif ($countTournamentsTeams >= 11 && $countTournamentsTeams <= 15) {
                 $countGroups = 3;
@@ -82,8 +82,8 @@ class MatchesControl extends Component
                 $groupIndex = ($groupIndex + 1) % count($groups);
             }
 
-            
-            
+
+
         }
 
         return redirect()->route('admin.groups-aut', ['tournament' => $tournamentId]);
