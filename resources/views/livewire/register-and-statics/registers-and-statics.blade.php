@@ -1,6 +1,6 @@
 <!-- livewire/register-and-statics/registers-and-statics.blade.php -->
 
-<div class="flex flex-wrap gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <!-- Card de usuarios -->
     <div class="flex-1 bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
         <div class="px-4 py-5 sm:p-6">
