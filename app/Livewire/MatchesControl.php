@@ -53,7 +53,7 @@ class MatchesControl extends Component
             $countGroups = 0;
             if ($countTournamentsTeams >= 4 && $countTournamentsTeams <= 5) {
                 $countGroups = 1;
-            } elseif ($countTournamentsTeams >= 4 && $countTournamentsTeams <= 10) {
+            } elseif ($countTournamentsTeams >= 6 && $countTournamentsTeams <= 10) {
                 $countGroups = 2;
             } elseif ($countTournamentsTeams >= 11 && $countTournamentsTeams <= 15) {
                 $countGroups = 3;
