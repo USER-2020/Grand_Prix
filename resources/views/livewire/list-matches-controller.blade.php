@@ -34,7 +34,7 @@
                                 {{ $partido->activo ? 'Desactivar' : 'Activar' }}
                             </x-primary-button>
                             <x-secondary-button
-                                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">
+                                class="bg-green-500 hover:bg-green-700 dark:text-white text-black font-bold py-2 px-4 rounded mr-2">
                                 {{--  <a href="{{ route('ruta_de_la_vista_del_score', ['partido' => $partido->id]) }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">  --}}
                                 <a href="{{ route('admin.score-liveaction', ['partido' => $partido->partido->id]) }}">
                                     Score
