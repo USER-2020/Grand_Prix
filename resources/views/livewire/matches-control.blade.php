@@ -1,5 +1,5 @@
-<div class="mt-4 overflow-scroll" >
-    <div class="overflow-scroll">
+<div class="mt-4 overflow-scroll sm:overflow-visible" >
+    <div class="overflow-scroll sm:overflow-visible">
         <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50 dark:bg-gray-800">
                 <tr>
