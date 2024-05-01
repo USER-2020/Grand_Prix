@@ -18,11 +18,11 @@
                         <td class="px-4 py-2 dark:text-gray-300 text-center">{{ $partido->partido->fase }}</td>
                         <td class="px-4 py-2 dark:text-gray-300 text-center">
                             @if ($partido->partido->activo && $partido->partido->finish)
-                                <span class="bg-pink-500 text-white py-1 px-2 rounded-full" style="color: #6C13E6">Finalizado</span>
+                                <span class="text-white py-1 px-2 rounded-full" style="color: #6C13E6">Finalizado</span>
                             @elseif ($partido->partido->activo && !$partido->partido->finish)
-                                <span class="bg-green-500 text-white py-1 px-2 rounded-full" style="color:#00E632">En curso</span>
+                                <span class="text-white py-1 px-2 rounded-full" style="color:#00E632">En curso</span>
                             @else
-                                <span class="bg-yellow-500 text-white py-1 px-2 rounded-full" style="color:#E6C32A">En espera</span>
+                                <span class="text-white py-1 px-2 rounded-full" style="color:#E6C32A">En espera</span>
                             @endif
                         </td>
 

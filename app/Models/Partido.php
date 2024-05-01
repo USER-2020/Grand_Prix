@@ -9,6 +9,11 @@ class Partido extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        // otros campos...
+        'winner',
+    ];
+
     public function scores()
     {
         return $this->hasMany(Score::class);

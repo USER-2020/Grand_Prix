@@ -25,6 +25,7 @@ class Tournament extends Model
 
     public function partidos()
     {
-        return $this->belongsToMany(Partido::class, 'tournament_partido');
+        return $this->belongsToMany(Partido::class, 'tournament_partidos');
     }
+
 }

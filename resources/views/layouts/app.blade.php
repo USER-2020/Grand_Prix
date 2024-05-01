@@ -42,8 +42,7 @@
         </main>
     </div>
 
-    @livewireScripts
-        
+    @livewireScripts       
    
 </body>
 

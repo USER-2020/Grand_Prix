@@ -1,6 +1,6 @@
 <section>
     <h2 class="dark:text-gray-300 font-weigth-300">
-        Listado de Grupos yu partidos creados
+        Listado de Grupos y partidos creados
     </h2>
 
     <div class="container">

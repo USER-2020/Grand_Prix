@@ -22,7 +22,7 @@ class ListMatchesController extends Component
 
         //TODO:solo sirve para pruebas, eliminar
         //Prueba test para cambiar todos los estados de partidos a finalizado 
-        $this->changuesStatesTableTest();
+        // $this->changuesStatesTableTest();
 
         
         // Inicializar la propiedad $this->tournamentPartidos como una colección vacía
